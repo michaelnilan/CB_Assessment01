@@ -45,7 +45,7 @@ void main() {
 void print_array(unsigned char arr[],int length){
   
     for(int i=0;i<length;i++){
-      printf("%d \n",arr[i]);
+      printf("%d => %d \n",arr[i],i);
     }
   
 }
