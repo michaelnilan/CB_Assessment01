@@ -35,34 +35,98 @@ void main() {
 
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
+
+  // Print the statistics 
+  print_statistics(test,SIZE);
   
 }
 
 /* Add other Implementation File Code Here */
 void print_array(unsigned char arr[],int length){
-  // Function body goes here
+  
+    for(int i=0;i<length;i++){
+      printf("%d \n",arr[i]);
+    }
+  
 }
 
 float find_mean(unsigned char arr[],int length){
-  // Function body goes here
+  int sum = 0;
+  for(int i=0;i<length;i++){
+    sum = sum + arr[i];
+  }
+  return sum/length;
 }
 
 void sort_array(unsigned char arr[],int length){
-  // Function body goes here
+  // Declare some local variables to swap
+  int temp = 0;
+  for(int i = 0;i<length;i++){
+    for(int j = 0;j<length - 1;j++){
+      if(arr[j] < arr[j+1]){
+        temp = arr[j];
+        arr[j] = arr[j+1];
+        arr[j+1] = temp;
+      }
+    }
+  }
 }
 
 float find_median(unsigned char arr[],int length){
-  // Function body goes here
+  float median = 0;
+  // Sort the array
+  sort_array(arr,length);
+   // Even number of elements
+  if(length % 2 == 0){
+    median = (arr[(length-1)/2] + arr[length/2])/2;
+  }
+  // Odd number of elements
+  else{
+    median = arr[length/2];
+  }
 }
 
-float find_maximum(unsigned char arr[],int length){}
+float find_maximum(unsigned char arr[],int length){
+  float max = 0;
+  for(int i = 0;i < length;i++){
+    if(max < arr[i]){
+      max = arr[i];
+    }
+  }
+  return max;
+}
 
 float find_minimum(unsigned char arr[],int length){
-  // Function body goes here
+  // Initialzing the minimum value as the first element
+   float min = arr[0];
+  for(int i = 0;i < length;i++){
+    if(min > arr[i]){
+      min = arr[i];
+    }
+  }
+  return min;  
 }
 
 void print_statistics(unsigned char arr[],int length){
-  // Function body goes here
+  // Calculate the mean
+  float mean = find_mean(arr,length);
+  
+  // Sort the array
+  sort_array(arr,length);
+  // Print the sorted array
+  printf("The sorted array: \n");
+  print_array(arr,length);
+  
+  //Calculate the median
+  float median = find_median(arr,length);
+
+  //Find the maximum 
+  float maximum = find_maximum(arr,length);
+
+  //Find the minimum
+  float minimum = find_minimum(arr,length);
+
+  printf("The mean : %f,\n The median: %f,\n The maximum value: %f,\n The minimum value: %f\n",mean,median,maximum,minimum);
 }
 
 
