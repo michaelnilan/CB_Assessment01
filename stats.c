@@ -1,21 +1,19 @@
 /******************************************************************************
- * Copyright (C) 2017 by Alex Fosdick - University of Colorado
+ * Copyright (C) 2021  by Nilan Fernando
  *
  * Redistribution, modification or use of this software in source or binary
- * forms is permitted as long as the files maintain this copyright. Users are 
- * permitted to modify this and use it to learn about the field of embedded
- * software. Alex Fosdick and the University of Colorado are not liable for any
- * misuse of this material. 
+ * forms is permitted as long as the files maintain this copyright.  
+ * 
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.c 
+ * @brief The C file
  *
- * <Add Extended Description Here>
+ * This contains all the implementation code and the function definitions
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Nilan Fernando
+ * @date 11/09/2021
  *
  */
 
@@ -41,6 +39,31 @@ void main() {
 }
 
 /* Add other Implementation File Code Here */
+void print_array(unsigned char arr[],int length){
+  // Function body goes here
+}
+
+float find_mean(unsigned char arr[],int length){
+  // Function body goes here
+}
+
+void sort_array(unsigned char arr[],int length){
+  // Function body goes here
+}
+
+float find_median(unsigned char arr[],int length){
+  // Function body goes here
+}
+
+float find_maximum(unsigned char arr[],int length){}
+
+float find_minimum(unsigned char arr[],int length){
+  // Function body goes here
+}
+
+void print_statistics(unsigned char arr[],int length){
+  // Function body goes here
+}
 
 
 
